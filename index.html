@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five 3D Rotating Cubes</title>
+    
+    <style>
+      
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            perspective: 1000px;
+            gap: 20px;
+            background-color: black;
+        }
+
+        .cube-container {
+            width: 150px;
+            height: 150px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate 8s infinite linear;
+        }
+
+        .cube-face {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            opacity: 0.8;
+            border: 2px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        /* Cube 1 Colors */
+        .cube1 .front  { background: rgba(255, 0, 0, 0.7); transform: translateZ(75px); }
+        .cube1 .back   { background: rgba(0, 128, 0, 0.7); transform: translateZ(-75px) rotateY(180deg); }
+        .cube1 .right  { background: rgba(0, 0, 255, 0.7); transform: translateX(75px) rotateY(90deg); }
+        .cube1 .left   { background: rgba(255, 255, 0, 0.7); transform: translateX(-75px) rotateY(-90deg); }
+        .cube1 .top    { background: rgba(128, 0, 128, 0.7); transform: translateY(-75px) rotateX(90deg); }
+        .cube1 .bottom { background: rgba(0, 255, 255, 0.7); transform: translateY(75px) rotateX(-90deg); }
+
+        /* Cube 2 Colors */
+        .cube2 .front  { background: rgba(255, 165, 0, 0.7); transform: translateZ(75px); }
+        .cube2 .back   { background: rgba(0, 255, 127, 0.7); transform: translateZ(-75px) rotateY(180deg); }
+        .cube2 .right  { background: rgba(75, 0, 130, 0.7); transform: translateX(75px) rotateY(90deg); }
+        .cube2 .left   { background: rgba(255, 20, 147, 0.7); transform: translateX(-75px) rotateY(-90deg); }
+        .cube2 .top    { background: rgba(0, 191, 255, 0.7); transform: translateY(-75px) rotateX(90deg); }
+        .cube2 .bottom { background: rgba(255, 215, 0, 0.7); transform: translateY(75px) rotateX(-90deg); }
+
+        /* Cube 3 Colors */
+        .cube3 .front  { background: rgba(139, 69, 19, 0.7); transform: translateZ(75px); }
+        .cube3 .back   { background: rgba(0, 206, 209, 0.7); transform: translateZ(-75px) rotateY(180deg); }
+        .cube3 .right  { background: rgba(148, 0, 211, 0.7); transform: translateX(75px) rotateY(90deg); }
+        .cube3 .left   { background: rgba(50, 205, 50, 0.7); transform: translateX(-75px) rotateY(-90deg); }
+        .cube3 .top    { background: rgba(255, 99, 71, 0.7); transform: translateY(-75px) rotateX(90deg); }
+        .cube3 .bottom { background: rgba(147, 112, 219, 0.7); transform: translateY(75px) rotateX(-90deg); }
+
+        /* Cube 4 Colors */
+        .cube4 .front  { background: rgba(220, 20, 60, 0.7); transform: translateZ(75px); }
+        .cube4 .back   { background: rgba(64, 224, 208, 0.7); transform: translateZ(-75px) rotateY(180deg); }
+        .cube4 .right  { background: rgba(138, 43, 226, 0.7); transform: translateX(75px) rotateY(90deg); }
+        .cube4 .left   { background: rgba(34, 139, 34, 0.7); transform: translateX(-75px) rotateY(-90deg); }
+        .cube4 .top    { background: rgba(255, 140, 0, 0.7); transform: translateY(-75px) rotateX(90deg); }
+        .cube4 .bottom { background: rgba(186, 85, 211, 0.7); transform: translateY(75px) rotateX(-90deg); }
+
+        /* Cube 5 Colors */
+        .cube5 .front  { background: rgba(255, 69, 0, 0.7); transform: translateZ(75px); }
+        .cube5 .back   { background: rgba(30, 144, 255, 0.7); transform: translateZ(-75px) rotateY(180deg); }
+        .cube5 .right  { background: rgba(199, 21, 133, 0.7); transform: translateX(75px) rotateY(90deg); }
+        .cube5 .left   { background: rgba(0, 250, 154, 0.7); transform: translateX(-75px) rotateY(-90deg); }
+        .cube5 .top    { background: rgba(218, 112, 214, 0.7); transform: translateY(-75px) rotateX(90deg); }
+        .cube5 .bottom { background: rgba(255, 228, 181, 0.7); transform: translateY(75px) rotateX(-90deg); }
+
+        @keyframes rotate {
+            0% { transform: rotateX(0deg) rotateY(0deg); }
+            100% { transform: rotateX(360deg) rotateY(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="cube-container cube1">
+        <div class="cube-face front">Front</div>
+        <div class="cube-face back">Back</div>
+        <div class="cube-face right">Right</div>
+        <div class="cube-face left">Left</div>
+        <div class="cube-face top">Top</div>
+        <div class="cube-face bottom">Bottom</div>
+    </div>
+    <div class="cube-container cube2">
+        <div class="cube-face front">Front</div>
+        <div class="cube-face back">Back</div>
+        <div class="cube-face right">Right</div>
+        <div class="cube-face left">Left</div>
+        <div class="cube-face top">Top</div>
+        <div class="cube-face bottom">Bottom</div>
+    </div>
+    <div class="cube-container cube3">
+        <div class="cube-face front">Front</div>
+        <div class="cube-face back">Back</div>
+        <div class="cube-face right">Right</div>
+        <div class="cube-face left">Left</div>
+        <div class="cube-face top">Top</div>
+        <div class="cube-face bottom">Bottom</div>
+    </div>
+    <div class="cube-container cube4">
+        <div class="cube-face front">Front</div>
+        <div class="cube-face back">Back</div>
+        <div class="cube-face right">Right</div>
+        <div class="cube-face left">Left</div>
+        <div class="cube-face top">Top</div>
+        <div class="cube-face bottom">Bottom</div>
+    </div>
+    <div class="cube-container cube5">
+        <div class="cube-face front">Front</div>
+        <div class="cube-face back">Back</div>
+        <div class="cube-face right">Right</div>
+        <div class="cube-face left">Left</div>
+        <div class="cube-face top">Top</div>
+        <div class="cube-face bottom">Bottom</div>
+    </div>
+</body>
+</html>
